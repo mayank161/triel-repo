@@ -119,3 +119,44 @@ const detail = [
 for(let i=0; i<detail.length; i++) {
     console.log(detail[i].id)
 }
+//for each loop in javascript
+detail.forEach(function(val) {
+    console.log(val.value)
+})
+// use of map is to create a new array with existing ones
+
+const createdArray = detail.map(function(val){
+    return val.id
+}) 
+console.log(createdArray)
+
+// functions in js
+function addNums(num1 = 1,num2 = 1) { // we save 1 as a default so if nothing pass print default
+    console.log(num1 + num2)
+    return num1 + num2
+}
+//we can return through same function
+console.log(addNums(5,5))
+
+// we can also write above function as
+const addnums = (num1 = 1,num2 = 1) => {
+    return num1 + num2
+}
+console.log(addnums(15,15))
+
+// or by more optimize we don not have to write return and write in one line
+const newsum = (num1 = 1,num2= 1) => num1 + num2
+console.log(newsum(20,20))
+
+// some example of functions
+// Write a function to take temperature in degree celcius and return in degree kelvin
+
+const celciusToKelvin = (temp = 0) => temp + 273
+
+console.log(`35 celcius is = ${celciusToKelvin(35)} kelvin`)
+
+const convertTemp = (temp , convert) => (convert == 'K') ? temp + 273: temp - 273
+
+console.log(`40 celcius into kelvin = ${ convertTemp(40,'K') }`)
+
+console.log(`308 kelvin into celcius = ${ convertTemp(308,'C') }`)
