@@ -160,3 +160,74 @@ const convertTemp = (temp , convert) => (convert == 'K') ? temp + 273: temp - 27
 console.log(`40 celcius into kelvin = ${ convertTemp(40,'K') }`)
 
 console.log(`308 kelvin into celcius = ${ convertTemp(308,'C') }`)
+
+
+//Functional Contructors in javascript
+
+function student(fname, rollNo, gender, dob) {
+    this.fname = fname;
+    this.rollNo = rollNo;
+    this.gender = gender;
+    this.dob = new Date(dob);
+    this.age = Math.round(Date.now(dob)/(365*30*24*60*60*80));
+    this.getBirthYear = () => this.dob.getFullYear();
+    this.fullName = () => `${this.fname} ${this.lastName}`
+}
+
+student1 = new student('Jay',  99, 'male' , 22-06-1999);
+student2 = new student('Vijay', 55, 'male', 12-08-1997);
+student1.lastName = 'agni';
+student2.lastName = 'stnam';
+if(student1.age < student2.age ) { console.log(student2.fname , student2.lastName) }
+else { console.log(student1.fname + student1.lastName)}
+console.log(student1.getBirthYear())
+console.log(student2.fullName())
+
+function minage(age) {
+    if(age<18) { console.log('not eligible') }
+    else { console.log('is eligible') }
+}
+minage(student2.age)
+
+//ES6 classes in javaScript (convert function into classes)
+
+class Student {
+    constructor(fname, rollNo, gender, dob) {
+        this.fname = fname;
+        this.rollNo = rollNo;
+        this.gender = gender;
+        this.dob = new Date(dob);
+
+        getBirthYear = () => this.dob.getFullYear();
+
+        fullName = () => `${this.fname} ${this.lastName}`
+    }
+}
+student3 = new student('Ray',  69, 'male' , 25-05-1998);
+console.log(student3.fname)
+
+// local storage in java script
+//it stores some element inside the browser so we can get it
+// methids in local storage
+
+localStorage.setItem('name', 'gamer');
+
+localStorage.clear(); //clear the local storage
+localStorage.setItem('name2', '2gamer');
+localStorage.setItem('name3', '3gamer');
+localStorage.removeItem('name3'); // remove particular item.
+
+console.log("value of name2 in local storage is ",localStorage.getItem('name2'));
+
+// local storage cannot take array
+//so to overcome it we have to use jason
+
+let larray = ['webdev','machine','dataScience'];
+
+//we cannot put the array in local storage so first we have to convert it into string and then store
+
+localStorage.setItem('Branch', JSON.stringify(larray)); 
+//JASON.stringify convert array into string so it look like array but work like string
+//after that by using JASON.parse() we can convert it into array again
+
+console.log("that is string converted to array by JASON.parse is ", JSON.parse(localStorage.getItem('Branch')));
