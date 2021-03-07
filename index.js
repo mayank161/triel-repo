@@ -229,5 +229,4 @@ let larray = ['webdev','machine','dataScience'];
 localStorage.setItem('Branch', JSON.stringify(larray)); 
 //JASON.stringify convert array into string so it look like array but work like string
 //after that by using JASON.parse() we can convert it into array again
-
 console.log("that is string converted to array by JASON.parse is ", JSON.parse(localStorage.getItem('Branch')));
