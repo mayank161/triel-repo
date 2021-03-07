@@ -230,3 +230,15 @@ localStorage.setItem('Branch', JSON.stringify(larray));
 //JASON.stringify convert array into string so it look like array but work like string
 //after that by using JASON.parse() we can convert it into array again
 console.log("that is string converted to array by JASON.parse is ", JSON.parse(localStorage.getItem('Branch')));
+const size = 0;
+class user {
+    constructor(username) {
+        this.username = username; 
+    }
+    size = size + 1;
+    registereduser = () => size;
+}
+
+const user1 = new user('jay');
+const user2 = new user('ak');
+console.log(user2.registereduser());
