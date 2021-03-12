@@ -206,6 +206,24 @@ class Student {
 student3 = new student('Ray',  69, 'male' , 25-05-1998);
 console.log(student3.fname)
 
+// static use in js
+// we can add static variable and static function inside the class 
+// if we initialized our variable by 0 and do it ++ all time we call then value will increase
+class onboard {
+    static count = 0;
+    constructor(increase) {
+        this.increase = increase;
+        onboard.c(); // it will call static variable and increase the count when constructor call 
+    }
+    static c = () => this.count++;
+    static Total = () => console.log("number of times onboard till now",this.count);
+}
+
+onboard1 = new onboard('1st product');
+onboard2 = new onboard('2nd product');
+onboard.Total();
+onboard.Total();
+
 // local storage in java script
 //it stores some element inside the browser so we can get it
 // methids in local storage
