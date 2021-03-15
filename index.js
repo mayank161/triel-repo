@@ -162,7 +162,7 @@ console.log(`40 celcius into kelvin = ${ convertTemp(40,'K') }`)
 console.log(`308 kelvin into celcius = ${ convertTemp(308,'C') }`)
 
 
-//Functional Contructors in javascript
+//Functional Constructors in javascript
 
 function student(fname, rollNo, gender, dob) {
     this.fname = fname;
