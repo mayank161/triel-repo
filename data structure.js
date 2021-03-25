@@ -54,3 +54,4 @@ const comparator = (a,b) => a.age - b.age; // sort based on age
 const sortByAge = stuDetail.sort(comparator);
 
 console.log(sortByAge);
+
